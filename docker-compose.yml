@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  go_frame:
+    container_name: go_frame
+    image: go_frame
+    build:
+      context: "."
+    volumes:
+      - ./conf/app.conf:/usr/src/app/conf/app.conf
+    env_file:
+      - .env
+    restart: always
